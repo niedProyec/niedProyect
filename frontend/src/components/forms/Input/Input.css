@@ -1,0 +1,29 @@
+.inp-login{
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid var(--main-color);
+    height: 37px;
+    border-radius: 10px;
+    margin-top: 5px;
+    padding: 0 7px;
+    box-sizing: border-box;
+}
+
+.inp-login:focus{
+    outline: none;
+    border: 2px solid #15a1e2;
+}
+
+.lb-login{ 
+    font-weight: 400;
+}
+
+.inp-login, .lb-login{
+    font-size: 15px;
+}
+
+.reverse{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}

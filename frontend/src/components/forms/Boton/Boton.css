@@ -1,0 +1,17 @@
+.btn-login{
+    color: white;
+    background-color: var(--main-color);
+    width: 70%;
+    height: 35px;
+    border: 2px solid var(--main-color);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.btn-login:hover{
+    background-color: white;
+    color: black;
+    transition: 0.3s;
+}
