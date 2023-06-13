@@ -1,0 +1,15 @@
+.title-rec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-rec{
+    width: 100%;
+}
+
+.paraf-rec{
+    text-align: center;
+    color: #848484;
+    font-size: 15px;
+}

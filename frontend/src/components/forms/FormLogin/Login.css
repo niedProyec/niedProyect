@@ -1,0 +1,16 @@
+.recuperar{
+    margin-top: 9px;
+    justify-content: end;
+    font-size: 15px;
+}
+
+.for-pass{
+    color: #ACACAC;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.for-pass:hover{
+    color: rgb(27, 164, 182);
+    transition: 0.3s;
+}

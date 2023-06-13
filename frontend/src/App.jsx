@@ -1,14 +1,14 @@
-import { Route, Routes } from "react-router-dom"
-import Login from "./views/login/Login"
-import Forget from "./views/forget/Forget"
-
+import { Navigate, Route, Routes } from "react-router-dom"
+import Inicio from "./views/inicio/Inicio"
 
 function App() {
 
   return (
     <Routes>
-      <Route element={<Login></Login>} path="/"></Route>
-      <Route element={<Forget></Forget>} path="/recuperar"></Route>
+        <Route path="/" element={<Navigate to="/inicio"></Navigate>}></Route>
+        <Route element={<Inicio></Inicio>} path="/inicio/*"></Route>
+        <Route element={<p>panel</p>} path="/panel"></Route>
+        <Route path="/*" element={<p>error</p>}></Route>
     </Routes>
   )
 }
