@@ -1,22 +1,50 @@
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import './Forget.css';
-import { useState } from "react";
 import { process } from "../../../models/process";
 import Input from "../Input/Input";
 import Boton from "../Boton/Boton";
 
 const Forget = ()=>{
+    const [step, setStep] = useState(process.Send);
+    const [user, setUser] = useState()
 
-    const [step, setStep] = useState(process.Validate);
+    const Navigate = useNavigate()
+    
+    const codeSend = (evento, userName)=>{
+        evento.preventDefault();
+        setUser(userName);
+        alert(userName);
+        setStep(process.Validate);
+    }
 
-    function SendCode(){
+    const validateCode = (evento, code)=>{
+        evento.preventDefault();
+        alert(code);
+        setStep(process.Change);
+    }
+
+    const passChange = (evento, pass, valida)=>{
+        evento.preventDefault();
+        if(pass==valida){
+            alert("contraseña cambiada");
+            Navigate('/inicio');
+        }else{
+            alert("las contraseñas no son iguales")
+        }
+    }
+
+    const SendCode = ()=>{
+
+        const [userName, setUserName] = useState();
+        
         return(
-            <form>
+            <form onSubmit={(evento)=>codeSend(evento, userName)}>
                 <div className="distance">
-                    <Input id='vUser' type='text' style='login' required='true'>USUARIO:</Input>
+                    <Input id='vUser' style='login' required={true} onChange={(val)=>setUserName(val.target.value)}>USUARIO:</Input>
                 </div>
                 <div className="distance form-container">
-                    <Boton style='login'>enviar codigo</Boton>
+                    <Boton style='login' type='submit'>enviar codigo</Boton>
                 </div>
                 <div className="paraf-rec">
                     <p>Se enviara un codigo de verificacion para validar la identidad del usuario</p>
@@ -25,11 +53,14 @@ const Forget = ()=>{
         )
     }
 
-    function CodeValidate(){
+    const CodeValidate =()=>{
+
+        const [code, setCode] = useState()
+
         return(
-            <form>
+            <form onSubmit={(evento)=>validateCode(evento,code)}>
                 <div className="distance">
-                    <Input id="codVer" type='text' style='login' required="true">Codigo de verificación:</Input>
+                    <Input id="codVer" type='text' style='login' required={true} onChange={(val)=>setCode(val.target.value)}>Codigo de verificación:</Input>
                 </div>
                 <div className="distance form-container">
                     <Boton style='login'>Validar</Boton>
@@ -41,13 +72,29 @@ const Forget = ()=>{
         )
     }
 
-    function ChangePass(){
+    const ChangePass =()=>{
+
+        const [pass1, setPass1] = useState();
+        const [valida, setValida] = useState();
         return(
-            <div>cambiar</div>
+            <form onSubmit={(evento)=>passChange(evento,pass1,valida)}>
+                <div className="distance">
+                    <Input id="newPass" type='password' style='login' required={true} onChange={(val)=>setPass1(val.target.value)}>Nueva Contraseña:</Input>
+                </div>
+                <div className="distance">
+                    <Input id="validatePass" type='password' style='login' required={true} onChange={(val)=>setValida(val.target.value)}>Confirmar Contraseña:</Input>
+                </div>
+                <div className="distance form-container">
+                    <Boton style='login'>Cambiar</Boton>
+                </div>
+                <div className="paraf-rec">
+                    <p>ingresa tu nueva contraseña para ingresar al sistema</p>
+                </div>
+            </form>            
         )
     }
 
-    function ForPa(){
+    const RenderProcess =()=>{
         if(step==process.Send) return<SendCode></SendCode>
         if(step==process.Validate) return<CodeValidate></CodeValidate>
         if(step==process.Change) return<ChangePass></ChangePass>
@@ -59,7 +106,7 @@ const Forget = ()=>{
                 <p className="title">Recuperar contraseña</p>
             </div>
             <div className="separator">
-                <ForPa></ForPa>
+                <RenderProcess></RenderProcess>
             </div>
             <div className="form-container padd">
                 <Link to='/inicio/login'>volver</Link>
