@@ -1,0 +1,60 @@
+.col-nav{
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+.nav{
+    height: 50px;
+    background-color: #007CC4;
+}
+
+.nav-center{
+    justify-content: center;
+    align-items: center;
+}
+
+.pro{
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-weight: 400;
+}
+
+.menu{
+    gap: 50px;
+    color: white;
+}
+
+.conf{
+    justify-content: end;
+    align-items: center;
+    padding-right: 30px;
+}
+
+.userconf{
+    height: 70%;
+    width: 40px;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: #36B4CF;
+    font-size: 13px;
+}
+
+#btnopc{
+    color: white;
+}
+
+#opciones{
+    position: absolute;
+    top: 55px;
+    width: 150px;
+    background-color: #f7f7f7;
+    border: 1px solid #dadada;
+    border-radius: 5px;
+    
+}
+
+.opcuser{
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+}

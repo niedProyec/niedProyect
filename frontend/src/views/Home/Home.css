@@ -1,0 +1,97 @@
+.col-tk{
+    grid-template-columns: 2fr 1fr;
+}
+
+.visualization{
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.vsUser{
+    left: 10%;
+}
+
+.vsGlobal{
+    right: 10%;
+}
+
+.vis-container{
+    width: 70%;
+    border: 1px solid #BBBBBB;
+}
+
+.col-vi{
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+}
+
+.principalPanel{
+    background-color: #007DC4;
+    height: 50px;
+}
+
+.rowsOpc{
+    background-color: #f0efef;
+    border: 1px solid #BBBBBB;
+    height: 50px;
+}
+
+.rowsOpc:hover{
+    border: 1px solid #229ee6;
+    background-color: #f8f5f5;
+}
+
+.Home{
+    height: 85vh;
+}
+
+.titlePrincipal{
+    align-items: center;
+    position: relative;
+    left: 20px;
+    color: white;
+}
+
+.btnCreate{
+    position: relative;
+    right: 10px;
+    justify-content: end;
+    align-items: center;
+}
+
+.text{
+    align-items: center;
+    position: relative;
+    left: 30px;
+}
+
+.number{
+    align-items: center;
+    justify-content: end;
+    position: relative;
+    right: 30px;
+}
+
+.nbContainer{
+    background-color: #6f8992;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: white;
+}
+
+.cg{
+    color: #1dd369;
+}
+
+.cy{
+    color: #f1e100;
+}
+
+.cn{
+    color: #ffa600;
+}

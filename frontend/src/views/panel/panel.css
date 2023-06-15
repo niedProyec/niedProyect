@@ -1,0 +1,10 @@
+.panel{
+    background-color: #dde9ff;
+    min-height: 100%;
+}
+
+.sticking{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}

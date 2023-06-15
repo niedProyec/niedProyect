@@ -15,3 +15,22 @@
     color: black;
     transition: 0.3s;
 }
+
+.btn-arrow{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-create{
+    background-color: #FFFBFB;
+    border: 1px solid #00FFF0;
+    border-radius: 5px;
+    height: 25px;
+    width: 120px;
+    cursor: pointer;
+}
+
+.btn-create:hover{
+    background-color: rgb(243, 241, 241);
+}

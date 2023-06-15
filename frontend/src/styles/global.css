@@ -14,3 +14,19 @@ a{
 :root{
     --main-color: #2871FF;
 }
+
+.grid{
+    display: grid;
+}
+
+ul{
+    list-style: none;
+}
+
+.flex{
+    display: flex;
+}
+
+p{
+    margin: 0;
+}

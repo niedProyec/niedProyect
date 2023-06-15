@@ -7,10 +7,6 @@
     align-items: center;
 }
 
-.logo, .form-container, .form-login, .recuperar{
-    display: flex;
-}
-
 .logo, .form-container, .form-login{
     justify-content: center;
 }
@@ -40,7 +36,7 @@
 }
 
 .padd{
-    padding: 10px 0 0px;
+    padding: 10px 0;
 }
 
 .separator{
