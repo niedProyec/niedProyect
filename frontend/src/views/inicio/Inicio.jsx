@@ -15,7 +15,7 @@ const Inicio = ()=>{
 
     return(
         <div className='login-container'>
-            <div className='logo flex'>
+            <div className='logo flex center'>
                 <p className='logo-icon'>Logo</p>
             </div>
             <div className='form-container flex'>

@@ -13,7 +13,7 @@ const Home = ()=>{
 
     return(
         <div className="grid col-vi Home">
-            <div className="visualization flex vsUser">
+            <div className="visualization flex vsUser center">
                 <div className='vis-container'>
                     <div className="grid col-tk principalPanel">
                         <div className='flex titlePrincipal'>
@@ -28,7 +28,7 @@ const Home = ()=>{
                             <p><i class="bi bi-circle-fill cg"></i> nuevo</p>
                         </div>
                         <div className='number flex'>
-                            <p className='nbContainer'>0</p>
+                            <p className='nbContainer flex center'>0</p>
                         </div>
                     </div>
                     <div className="grid col-tk rowsOpc">
@@ -36,7 +36,7 @@ const Home = ()=>{
                             <p><i class="bi bi-circle cg"></i> en proceso</p>
                         </div>
                         <div className='number flex'>
-                            <p className='nbContainer'>0</p>
+                            <p className='nbContainer flex center'>0</p>
                         </div>
                     </div>
                     <div className="grid col-tk rowsOpc">
@@ -44,7 +44,7 @@ const Home = ()=>{
                             <p><i class="bi bi-circle-fill cy"></i> en espera</p>
                         </div>
                         <div className='number flex'>
-                            <p className='nbContainer'>0</p>
+                            <p className='nbContainer flex center'>0</p>
                         </div>
                     </div>
                     <div className="grid col-tk rowsOpc">
@@ -52,7 +52,7 @@ const Home = ()=>{
                             <p><i class="bi bi-circle"></i> resueltas</p>
                         </div>
                         <div className='number flex'>
-                            <p className='nbContainer'>0</p>
+                            <p className='nbContainer flex center'>0</p>
                         </div>
                     </div>
                     <div className="grid col-tk rowsOpc">
@@ -60,7 +60,7 @@ const Home = ()=>{
                             <p><i class="bi bi-circle-fill cn"></i> garantia</p>
                         </div>
                         <div className='number flex'>
-                            <p className='nbContainer'>0</p>
+                            <p className='nbContainer flex center'>0</p>
                         </div>
                     </div>
                     <div className="grid col-tk rowsOpc">
@@ -68,12 +68,12 @@ const Home = ()=>{
                             <p><i class="bi bi-circle-fill"></i> cerrado</p>
                         </div>
                         <div className='number flex'>
-                            <p className='nbContainer'>0</p>
+                            <p className='nbContainer flex center'>0</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="visualization flex vsGlobal">
+            <div className="visualization flex vsGlobal center">
                 <div className='vis-container'>
                     <div className="flex principalPanel">
                         <div className='flex titlePrincipal'>
@@ -85,7 +85,7 @@ const Home = ()=>{
                             <p><i class="bi bi-circle-fill cg"></i> nuevo</p>
                         </div>
                         <div className='number flex'>
-                            <p className='nbContainer'>0</p>
+                            <p className='nbContainer flex center'>0</p>
                         </div>
                     </div>
                     <div className="grid col-tk rowsOpc">
@@ -93,7 +93,7 @@ const Home = ()=>{
                             <p><i class="bi bi-circle cg"></i> en proceso</p>
                         </div>
                         <div className='number flex'>
-                            <p className='nbContainer'>0</p>
+                            <p className='nbContainer flex center'>0</p>
                         </div>
                     </div>
                     <div className="grid col-tk rowsOpc">
@@ -101,7 +101,7 @@ const Home = ()=>{
                             <p><i class="bi bi-circle-fill cy"></i> en espera</p>
                         </div>
                         <div className='number flex'>
-                            <p className='nbContainer'>0</p>
+                            <p className='nbContainer flex center'>0</p>
                         </div>
                     </div>
                     <div className="grid col-tk rowsOpc">
@@ -109,7 +109,7 @@ const Home = ()=>{
                             <p><i class="bi bi-circle"></i> resueltas</p>
                         </div>
                         <div className='number flex'>
-                            <p className='nbContainer'>0</p>
+                            <p className='nbContainer flex center'>0</p>
                         </div>
                     </div>
                     <div className="grid col-tk rowsOpc">
@@ -117,7 +117,7 @@ const Home = ()=>{
                             <p><i class="bi bi-circle-fill cn"></i> garantia</p>
                         </div>
                         <div className='number flex'>
-                            <p className='nbContainer'>0</p>
+                            <p className='nbContainer flex center'>0</p>
                         </div>
                     </div>
                     <div className="grid col-tk rowsOpc">
@@ -125,7 +125,7 @@ const Home = ()=>{
                             <p><i class="bi bi-circle-fill"></i> cerrado</p>
                         </div>
                         <div className='number flex'>
-                            <p className='nbContainer'>0</p>
+                            <p className='nbContainer flex center'>0</p>
                         </div>
                     </div>
                 </div>

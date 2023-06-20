@@ -65,27 +65,27 @@ const NavBar = () => {
 
   return (
     <div className="grid nav col-nav">
-      <div className='nav-center flex'>
+      <div className='center flex'>
         <h2 className='pro'>Logo</h2>
       </div>
       <div>
         <ul className='flex menu'>
-          <li>inicio</li>
-          <li>soporte</li>
-          <li>garantia</li>
+          <li><Link to='/panel/home' className='btnopc'>inicio</Link></li>
+          <li><Link to='/panel/support' className='btnopc'>soporte</Link></li>
+          <li>crear caso</li>
         </ul>
       </div>
       <div className='flex conf'>
         <h3 className='pro'>rol</h3>
-        <div className='userconf flex nav-center'>
+        <div className='userconf flex center'>
           <h3 className='pro'>ES</h3>
         </div>
-        <Boton style='arrow' id='btnopc' onClick={userMenu}>
-          <i className="bi bi-chevron-down"></i>
+        <Boton style='arrow' onClick={userMenu}>
+          <i className="bi bi-chevron-down btnopc"></i>
         </Boton>
         {menuVisible && (
           <div ref={menuRef} id='opciones'>
-            <Link to='/' className='opcuser'>cerrar sesion</Link>
+            <Link to='/' className='opcuser flex'>cerrar sesion</Link>
           </div>
         )}
       </div>

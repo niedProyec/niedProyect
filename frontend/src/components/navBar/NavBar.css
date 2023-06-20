@@ -7,11 +7,6 @@
     background-color: #007CC4;
 }
 
-.nav-center{
-    justify-content: center;
-    align-items: center;
-}
-
 .pro{
     margin: 0;
     padding: 0;
@@ -39,7 +34,7 @@
     font-size: 13px;
 }
 
-#btnopc{
+.btnopc{
     color: white;
 }
 
@@ -55,6 +50,5 @@
 
 .opcuser{
     margin: 5px;
-    display: flex;
     justify-content: center;
 }

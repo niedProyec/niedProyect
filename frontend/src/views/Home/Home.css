@@ -4,8 +4,6 @@
 
 .visualization{
     position: relative;
-    justify-content: center;
-    align-items: center;
 }
 
 .vsUser{
@@ -77,15 +75,12 @@
     background-color: #6f8992;
     height: 25px;
     width: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 5px;
     color: white;
 }
 
 .cg{
-    color: #1dd369;
+    color: #2de62d;
 }
 
 .cy{

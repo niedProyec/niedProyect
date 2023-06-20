@@ -4,10 +4,9 @@
 
 .logo{
     height: 30%;
-    align-items: center;
 }
 
-.logo, .form-container, .form-login{
+.form-container, .form-login{
     justify-content: center;
 }
 

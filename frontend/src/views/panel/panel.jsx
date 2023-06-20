@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import NavBar from '../../components/navBar/navBar'
 import './panel.css'
 import Home from '../Home/Home'
+import Support from '../support/Support'
 
 {/**en este modulo se muestra el dashboard de usuario */}
 
@@ -19,6 +20,7 @@ const Panel = ()=>{
             </div>
             <Routes>
                 <Route path='/home' element={<Home></Home>}></Route>
+                <Route path='/support' element={<Support></Support>}></Route>
             </Routes>
         </div>
     )

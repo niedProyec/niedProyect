@@ -1,0 +1,28 @@
+.support-container{
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.cns{
+    width: 80%;
+}
+
+.opc-pes{
+    margin: 0;
+    width: 160px;
+}
+
+.dashboard{
+    background-color: #FFFBFB;
+    border: 1px solid #CACACA;
+    padding: 0 15px 13px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    
+}
+
+.boton{
+    position: relative;
+    z-index: 1;
+    top: 1px;
+}

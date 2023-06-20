@@ -34,3 +34,19 @@
 .btn-create:hover{
     background-color: rgb(243, 241, 241);
 }
+
+.btn-pes{
+    width: 160px;
+    height: 30px;
+    border: 1px solid #CACACA;
+    cursor: pointer;
+}
+
+.active{
+    background-color: #FFFBFB;
+    border-bottom: 1px solid #FFFBFB;
+}
+
+.disable{
+    background-color: #DFDFDF;
+}
