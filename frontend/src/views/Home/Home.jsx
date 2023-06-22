@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Boton from '../../components/forms/Boton/Boton'
 import './Home.css'
 
@@ -17,7 +18,7 @@ const Home = ()=>{
                 <div className='vis-container'>
                     <div className="grid col-tk principalPanel">
                         <div className='flex titlePrincipal'>
-                            <p><i class="bi bi-exclamation-circle"></i> Tickets</p>
+                            <p><i class="bi bi-exclamation-circle"></i> <Link to='/panel/support/user/principal'className='txtl'>Tickets</Link></p>
                         </div>
                         <div className='flex btnCreate'>
                             <Boton style='create'>Nuevo caso</Boton>
@@ -77,7 +78,7 @@ const Home = ()=>{
                 <div className='vis-container'>
                     <div className="flex principalPanel">
                         <div className='flex titlePrincipal'>
-                            <p>Global</p>
+                        <Link to='/panel/support/global'className='txtl'>Global</Link>
                         </div>
                     </div>
                     <div className="grid col-tk rowsOpc">

@@ -20,7 +20,7 @@ const Panel = ()=>{
             </div>
             <Routes>
                 <Route path='/home' element={<Home></Home>}></Route>
-                <Route path='/support' element={<Support></Support>}></Route>
+                <Route path='/support/*' element={<Support></Support>}></Route>
             </Routes>
         </div>
     )

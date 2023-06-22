@@ -71,7 +71,7 @@ const NavBar = () => {
       <div>
         <ul className='flex menu'>
           <li><Link to='/panel/home' className='btnopc'>inicio</Link></li>
-          <li><Link to='/panel/support' className='btnopc'>soporte</Link></li>
+          <li><Link to='/panel/support/user/principal' className='btnopc'>soporte</Link></li>
           <li>crear caso</li>
         </ul>
       </div>
