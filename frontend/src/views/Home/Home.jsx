@@ -78,7 +78,7 @@ const Home = ()=>{
                 <div className='vis-container'>
                     <div className="flex principalPanel">
                         <div className='flex titlePrincipal'>
-                        <Link to='/panel/support/global'className='txtl'>Global</Link>
+                        <Link to='/panel/support/global/principal'className='txtl'>Global</Link>
                         </div>
                     </div>
                     <div className="grid col-tk rowsOpc">
