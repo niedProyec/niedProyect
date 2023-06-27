@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import './Forget.css';
 import { process } from "../../../models/process";
 import Input from "../Input/Input";
 import Boton from "../Boton/Boton";
+import './Forget.css';
 
 {/**en caso de que al usuario se le olvide su contraseña */}
 
@@ -18,7 +18,7 @@ const Forget = ()=>{
 
     const [step, setStep] = useState(process.Send);
     const [user, setUser] = useState()
-
+    
     /**
      * se crea una constante navigate para navegar en las difetentes rutas como sea requerido
      */
