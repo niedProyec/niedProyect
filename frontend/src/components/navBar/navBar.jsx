@@ -5,7 +5,15 @@ import { useState, useEffect, useRef } from 'react';
 
 {/**la barra de navegacion se va a tener disponible dentro del panel */}
 
-const NavBar = () => {
+const NavBar = (props) => {
+
+  const { user } = props
+
+  const rol = searchRol()
+
+  async function searchRol(){
+    return ''
+  }
 
   /**
    * se crea una variable para manejar el estado del menu de usuario, si es falso no se muestra y si
@@ -76,9 +84,9 @@ const NavBar = () => {
         </ul>
       </div>
       <div className='flex conf'>
-        <h3 className='pro'>rol</h3>
+        <h3 className='pro'>{rol}</h3>
         <div className='userconf flex center'>
-          <h3 className='pro'>ES</h3>
+          <h3 className='pro'>{user}</h3>
         </div>
         <Boton style='arrow' onClick={userMenu}>
           <i className="bi bi-chevron-down btnopc"></i>

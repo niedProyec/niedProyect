@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import { AES, enc } from 'crypto-js';
 import { CRYP_PASS } from '../../../services/PassService.js'
+import { LoginService } from '../../../services/AuthService.js';
 import Input from '../Input/Input.jsx';
 import Boton from '../Boton/Boton.jsx';
 import './Login.css'
@@ -33,13 +34,19 @@ const Login = ()=>{
      * y si los datos son correctos se ingresa al panel del usuario
      */
 
-    function validate(evento){
+    async function validate(evento){
         evento.preventDefault();
         if(remember){
             setCookie('user', user, { expires: new Date('9999-12-31') });
             setCookie('password', AES.encrypt(pass, claveEncriptacion).toString(), { expires: new Date('9999-12-31') });
         }
-        Navigate('/panel');
+        const res = await LoginService(user, pass)
+        if(res.ok){
+            Navigate('/panel/home',{state:user});
+        }else{
+            alert('datos incorrectos');
+        }
+        
     }
 
     function changeRemember (){
