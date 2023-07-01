@@ -42,7 +42,8 @@ const Login = ()=>{
         }
         const res = await LoginService(user, pass)
         if(res.ok){
-            Navigate('/panel/home',{state:user});
+            localStorage.setItem('userName',user);
+            Navigate('/panel/home');
         }else{
             alert('datos incorrectos');
         }

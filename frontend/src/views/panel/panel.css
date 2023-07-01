@@ -1,6 +1,7 @@
 .panel{
     background-color: #dde9ff;
     min-height: 100%;
+    width: 100%;
 }
 
 .sticking{

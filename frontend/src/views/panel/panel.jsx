@@ -1,15 +1,26 @@
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
+import { useContext, useEffect } from 'react'
+import SessionContext from '../../context/sesionContext'
 import NavBar from '../../components/navBar/navBar'
-import './panel.css'
 import Home from '../Home/Home'
 import Support from '../support/Support'
+import './panel.css'
+import { UserData } from '../../services/DataUser'
 
 {/**en este modulo se muestra el dashboard de usuario */}
 
 const Panel = ()=>{
 
-    const location = useLocation();
-    const user = location.state.slice(0,2);
+    const { user, login, rol } = useContext(SessionContext);
+
+    useEffect(()=>{
+        const fetchData = async () => {
+            const usuario = localStorage.getItem('userName');
+            const res = await UserData(usuario);
+            login(res[0]);
+        };
+        fetchData();
+    },[login])
 
     /**esta vista contiene una barra de navegacion
      * así mismo contiene diversas rutas en la que el usuario podrá navegar
@@ -19,7 +30,7 @@ const Panel = ()=>{
     return(
         <div className='panel'>
             <div className='sticking'>
-            <NavBar user={user}></NavBar>
+            <NavBar user={user} rol={rol}></NavBar>
             </div>
             <Routes>
                 <Route path='/home' element={<Home></Home>}></Route>

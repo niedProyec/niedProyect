@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom"
+import { SessionProvider } from "./context/sesionContext"
 import Inicio from "./views/inicio/Inicio"
 import Panel from "./views/panel/panel"
 
@@ -13,10 +14,10 @@ function App() {
 
   return (
     <Routes>
-        <Route path="/" element={<Navigate to="/inicio/login"></Navigate>}></Route>
+        <Route path="/" element={<Navigate to="/inicio/login"/>}></Route>
         <Route element={<Inicio></Inicio>} path="/inicio/*"></Route>
-        <Route path="/panel" element={<Navigate to="/panel/home"></Navigate>}></Route>
-        <Route element={<Panel></Panel>} path="/panel/*"></Route>
+        <Route path="/panel" element={<Navigate to="/panel/home"/>}></Route>
+        <Route element={<SessionProvider><Panel></Panel></SessionProvider>} path="/panel/*"></Route>
         <Route path="/*" element={<p>error</p>}></Route>
     </Routes>
   )

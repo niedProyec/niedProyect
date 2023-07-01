@@ -1,5 +1,11 @@
 import { credenciales } from "../index.js"
 
+// esta funcion recibe dos parametros
+// req trae la informacion de usuario y contraseña
+// res devuelve el resultado
+// en esta funcion se valida las credenciales del usuario
+
+
 export async function ValidateCredentials(req, res){
     const { user, pass } = req.headers;
     let documento = null;
@@ -20,4 +26,21 @@ export async function ValidateCredentials(req, res){
         return
     }
 
+}
+
+// esta funcion recibe dos parametros
+// req trae la informacion de usuario 
+// res devuelve el resultado que en este caso es toda la informacion correspondiente al usuario
+
+export async function DataUser(req,res){
+  const { user } = req.headers;
+  let documento = null;
+  try{
+    documento = await credenciales.query(`select*from user_data('${user}')`)
+    res.status(200).json(documento.rows);
+  }catch(err){
+    res.status(400)
+    res.json(err)
+    return
+  }
 }

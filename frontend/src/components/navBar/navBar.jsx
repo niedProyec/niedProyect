@@ -1,19 +1,23 @@
 import Boton from '../forms/Boton/Boton';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useContext } from 'react';
+import SessionContext from '../../context/sesionContext';
 
 {/**la barra de navegacion se va a tener disponible dentro del panel */}
 
 const NavBar = (props) => {
 
-  const { user } = props
+  const { logout } = useContext(SessionContext);
 
-  const rol = searchRol()
+  const handleClick = () => {
+    logout()
+    setTimeout(() => {
+      localStorage.removeItem('userName');
+    }, 500);
+  };
 
-  async function searchRol(){
-    return ''
-  }
+  const { user, rol } = props
 
   /**
    * se crea una variable para manejar el estado del menu de usuario, si es falso no se muestra y si
@@ -84,7 +88,7 @@ const NavBar = (props) => {
         </ul>
       </div>
       <div className='flex conf'>
-        <h3 className='pro'>{rol}</h3>
+        <h4 className='pro'>{rol}</h4>
         <div className='userconf flex center'>
           <h3 className='pro'>{user}</h3>
         </div>
@@ -93,7 +97,7 @@ const NavBar = (props) => {
         </Boton>
         {menuVisible && (
           <div ref={menuRef} id='opciones'>
-            <Link to='/' className='opcuser flex'>cerrar sesion</Link>
+            <Link to='/inicio/login' className='opcuser flex' onClick={handleClick}>cerrar sesion</Link>
           </div>
         )}
       </div>
