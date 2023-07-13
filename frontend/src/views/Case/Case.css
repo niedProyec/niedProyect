@@ -1,0 +1,45 @@
+.container-cu{
+    width: 100%;
+    background-color: #D2E2FF;
+    justify-content: center;
+}
+
+.container-case{
+    background-color: #FFFBFB;
+    width: 80%;
+    margin-top: 15px;
+    border-radius: 7px;
+}
+
+.case-list{
+    margin: 20px;
+    width: 100%;
+}
+
+.tks{
+    margin-top: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.nc{
+    background-color: #54F695;
+}
+
+.btnn{
+    width: 50%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.bve{
+    background-color: #50e01c;
+}
+
+.br{
+    background-color: #FF3131;
+}
+
+.cr{
+    background-color: #f08e1e;
+}

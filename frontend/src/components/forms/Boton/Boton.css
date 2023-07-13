@@ -50,3 +50,20 @@
 .disable{
     background-color: #DFDFDF;
 }
+
+.btn-upload{
+    cursor: pointer;
+    background-color: #0094FF;
+    border: 2px solid #0094FF;
+    width: 160px;
+    height: 25px;
+    border-radius: 5px;
+    color: white;
+    transition: 0.5s;
+}
+
+.btn-upload:hover{
+    color: black;
+    background-color: transparent;
+    transition: 0.5s;
+}

@@ -49,6 +49,7 @@
 }
 
 .opcuser{
-    margin: 5px;
+    padding: 5px 0;
     justify-content: center;
+    border-bottom: #dadada 1px solid;
 }

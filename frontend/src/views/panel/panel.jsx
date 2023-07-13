@@ -6,6 +6,7 @@ import Home from '../Home/Home'
 import Support from '../support/Support'
 import './panel.css'
 import { UserData } from '../../services/DataUser'
+import UserPreferences from '../UserPreferenes/UserPreferences'
 
 {/**en este modulo se muestra el dashboard de usuario */}
 
@@ -35,6 +36,7 @@ const Panel = ()=>{
             <Routes>
                 <Route path='/home' element={<Home></Home>}></Route>
                 <Route path='/support/*' element={<Support></Support>}></Route>
+                <Route path='/preferences' element={<UserPreferences></UserPreferences>}></Route>
             </Routes>
         </div>
     )

@@ -1,0 +1,61 @@
+.userp{
+    justify-content: center;
+    padding: 30px;
+}
+
+.usp{
+    width: 75%;
+}
+
+.pes-btn{
+    position: relative;
+    z-index: 1;
+    top: 1px;
+}
+
+.preferences{
+    background-color: #FFFBFB;
+    border: 1px solid #CACACA;
+    padding: 15px 13px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+
+}
+
+.userInitials{
+    width: 15%;
+    justify-content: center;
+}
+
+.userData{
+    width: 85%;
+}
+
+.userI{
+    height: 60px;
+    width: 60px;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: #36B4CF;
+    font-size: 13px;
+}
+
+.userText{
+    font-size: 20px;
+    color: white;
+}
+
+.formCol{
+    width: 50%;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dataCont{
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.pad{
+    margin-top: 30px;
+}

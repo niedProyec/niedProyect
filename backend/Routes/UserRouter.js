@@ -1,5 +1,5 @@
 import express from "express";
-import { DataUser, ValidateCredentials } from "../controllers/userControllers.js";
+import { DataUser, ValidateCredentials, UpdateCredentials, UpdateUserData } from "../controllers/userControllers.js";
 
 const userRouter = express.Router();
 
@@ -19,8 +19,17 @@ userRouter.get("/data",(req,res)=>{
     DataUser(req,res);
 })
 
+
 //actualizar
 //PUT
+
+userRouter.put("/",(req,res)=>{
+    UpdateCredentials(req,res)
+})
+
+userRouter.put("/updata",(req,res)=>{
+    UpdateUserData(req,res)
+})
 
 
 export default userRouter;

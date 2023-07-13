@@ -2,6 +2,8 @@ import { Navigate, Route, Routes } from "react-router-dom"
 import { SessionProvider } from "./context/sesionContext"
 import Inicio from "./views/inicio/Inicio"
 import Panel from "./views/panel/panel"
+import UserAuth from "./views/UserAuth/UserAuth"
+import UserCase from "./views/Case/UserCase"
 
 {/**en este modulo se define la funcion principal que va a contener la pagina a renderizar */}
 
@@ -15,9 +17,11 @@ function App() {
   return (
     <Routes>
         <Route path="/" element={<Navigate to="/inicio/login"/>}></Route>
-        <Route element={<Inicio></Inicio>} path="/inicio/*"></Route>
+        <Route path="/inicio/*" element={<Inicio></Inicio>}></Route>
         <Route path="/panel" element={<Navigate to="/panel/home"/>}></Route>
-        <Route element={<SessionProvider><Panel></Panel></SessionProvider>} path="/panel/*"></Route>
+        <Route path="/panel/*" element={<SessionProvider><Panel></Panel></SessionProvider>}></Route>
+        <Route path="/authUser" element={<UserAuth></UserAuth>}></Route>
+        <Route path="/case/:id" element={<UserCase></UserCase>}></Route>
         <Route path="/*" element={<p>error</p>}></Route>
     </Routes>
   )

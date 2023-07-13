@@ -6,9 +6,9 @@ import SessionContext from '../../context/sesionContext';
 
 {/**la barra de navegacion se va a tener disponible dentro del panel */}
 
-const NavBar = (props) => {
+const NavBar = () => {
 
-  const { logout } = useContext(SessionContext);
+  const { logout, user, rol } = useContext(SessionContext);
 
   const handleClick = () => {
     logout()
@@ -16,8 +16,6 @@ const NavBar = (props) => {
       localStorage.removeItem('userName');
     }, 500);
   };
-
-  const { user, rol } = props
 
   /**
    * se crea una variable para manejar el estado del menu de usuario, si es falso no se muestra y si
@@ -98,6 +96,7 @@ const NavBar = (props) => {
         {menuVisible && (
           <div ref={menuRef} id='opciones'>
             <Link to='/inicio/login' className='opcuser flex' onClick={handleClick}>cerrar sesion</Link>
+            <Link to='/panel/preferences' className='opcuser flex'>preferencias</Link>
           </div>
         )}
       </div>

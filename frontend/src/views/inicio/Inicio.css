@@ -4,6 +4,7 @@
 
 .logo{
     height: 30%;
+    padding-bottom: 10px;
 }
 
 .form-container, .form-login{
@@ -32,6 +33,8 @@
 .login-container{
     background-color: #dde9ff;
     min-height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .padd{

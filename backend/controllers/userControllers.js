@@ -44,3 +44,27 @@ export async function DataUser(req,res){
     return
   }
 }
+
+export async function UpdateCredentials(req,res){
+  const {user, pass } = req.headers;
+  let documento = null;
+  try{
+    documento = await credenciales.query(`select update_pass('${user}','${pass})`)
+    res.status(200).json({ message: "Éxito" });
+  } catch(err){
+    res.status(400)
+    res.json(err)
+  }
+}
+
+export async function UpdateUserData(req,res){
+  const {name, lastname, cel, user} = req.headers;
+  let documento = null;
+  try{
+    documento = await credenciales.query(`select update_user_data('${name}','${lastname}','${cel}','${user}')`)
+    res.status(200).json({ message: "Éxito" });
+  }catch(err){
+    res.status(400)
+    res.json(err)
+  }
+}

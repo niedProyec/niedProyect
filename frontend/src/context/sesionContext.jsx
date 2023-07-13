@@ -17,12 +17,20 @@ export const SessionProvider = (props)=>{
     const [userName, setUserName] = useState(null);
     const [user, setUser] = useState(null)
     const [rol, setRol] = useState(null)
+    const [name, setName] = useState(null)
+    const [lastName, setLastName] = useState(null)
+    const [cel, setCel] = useState(null)
+    const [correo, setCorreo] = useState(null)
 
     const login = (data)=>{
         setTimeout(() => {
             setUserName(data.usuario)
             setUser(userName.slice(0,2).toUpperCase())
             setRol(data.rol)
+            setName(data.nombre)
+            setLastName(data.apellido)
+            setCel(data.numero_celular)
+            setCorreo(data.correo)
             setIsLogedIn(true)
         }, 100);
     }
@@ -31,6 +39,10 @@ export const SessionProvider = (props)=>{
         setUser(null)
         setUserName(null)
         setRol(null)
+        setName(null)
+        setLastName(null)
+        setCel(null)
+        setCorreo(null)
         setIsLogedIn(false)
     }
 
@@ -39,8 +51,12 @@ export const SessionProvider = (props)=>{
         userName,
         user,
         rol,
+        name,
+        lastName,
+        cel,
+        correo,
         login,
-        logout
+        logout,
     }
 
     return(

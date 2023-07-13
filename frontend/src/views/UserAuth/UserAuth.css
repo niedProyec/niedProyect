@@ -1,0 +1,29 @@
+.container-auth{
+    min-height: 100%;
+    width: 100%;
+    background-color: #dde9ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-val{
+    background-color: #f7f7f7;
+    width: 30%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-val{
+    width: 80%;
+}
+
+.textt{
+    text-align: center;
+}
+
+.form-auth{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
