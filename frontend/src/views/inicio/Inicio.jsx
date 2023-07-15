@@ -1,17 +1,15 @@
-import { Navigate, Route, Routes } from 'react-router-dom'
 import Login from '../../components/forms/FormLogin/Login.jsx'
 import Forget from '../../components/forms/forget/Forget.jsx'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import './Inicio.css'
 
-{/**este modulo es la página principal de la app en este se realiza el sistema de login */}
+// este modulo es la página principal de la app en este se realiza el sistema de login
 
 const Inicio = ()=>{
 
-    /**
-     * esta pagina muestra diferentes rutas
-     * /login es el sistema de login
-     * /forget en caso de que al usuario se le olvide la contraseña se accede a dicha ruta
-     */
+    // esta pagina muestra diferentes rutas
+    // /login es el sistema de login
+    // /forget en caso de que al usuario se le olvide la contraseña se accede a dicha ruta
 
     return(
         <div className='login-container'>

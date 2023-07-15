@@ -1,8 +1,13 @@
-import { useState } from 'react'
 import Boton from '../forms/Boton/Boton'
+import { useState } from 'react'
 import './tableStyle.css'
 
+// este componente renderiza los casos finalizados
+
 const ListFinishCase = (props)=>{
+
+    // de acuerdo al tipo se renderizam los casos
+
     const { type } = props
 
     const CasosResueltoUs=[
@@ -17,11 +22,17 @@ const ListFinishCase = (props)=>{
         {id:12,titulo:'titulo12',fechaApertura:'1/1/2023',solicitante:'cliente12',tecnico:'tecnico12'}
     ]
 
+    // se guarda el estado para hacer visible la tabla
+
     const [viewFinish, setViewFinish] = useState(true)
+
+    // se cambia el estado de la vista
 
     function changeFinish(){
         setViewFinish(!viewFinish)
     }
+
+    // dependiendo del tipo se renderiza la tabla respectiva
 
     const WhichTable = ()=>{
         if(type==='user') return(
@@ -64,18 +75,20 @@ const ListFinishCase = (props)=>{
         )
     }
 
+    // se retorna la tabla con los datos respectivos
+
     return (
         <div className='tableContainer'>
-                <div className='title-finish grid'>
-                    <span className='text-table flex'>Resueltas</span>
-                    <span className='text-table flex inv'>
-                        <Boton style='arrow' onClick={changeFinish}><i className="bi bi-chevron-down"></i></Boton>
-                    </span>
-                </div>
-                <div className={ viewFinish? 'visible' : 'oculta'}>
-                    <WhichTable></WhichTable>
-                </div>
+            <div className='title-finish grid'>
+                <span className='text-table flex'>Resueltas</span>
+                <span className='text-table flex inv'>
+                    <Boton style='arrow' onClick={changeFinish}><i className="bi bi-chevron-down"></i></Boton>
+                </span>
             </div>
+            <div className={ viewFinish? 'visible' : 'oculta'}>
+                <WhichTable></WhichTable>
+            </div>
+        </div>
     )
 }
 

@@ -1,15 +1,24 @@
-import { useNavigate } from 'react-router-dom';
 import Input from '../../components/forms/Input/Input.jsx'
 import Boton from '../../components/forms/Boton/Boton.jsx'
+import { useNavigate } from 'react-router-dom';
 import './UserAuth.css'
+
+// este modulo es para validar si el cliente es el coorespondiente a un caso, para que pueda ver
+// el seguimiento que se le ha realziado
 
 const UserAuth = ()=>{
 
+    // se hace una constante de navegacion para poder navegar a otras paginas
+
     const Navigate = useNavigate();
+
+    // se valida el usuario y se hace el respectivo direccionamiento
 
     function validate(){
         Navigate('/case/1');
     }
+
+    // se retorna el formulario para validar el cliente
 
     return(
         <div className="container-auth">

@@ -1,5 +1,7 @@
 import './Case.css'
 
+//se muestra el seguimiento que se le ha dado al caso del cliente
+
 const UserCase = ()=>{
     return(
         <div className='container-cu'>

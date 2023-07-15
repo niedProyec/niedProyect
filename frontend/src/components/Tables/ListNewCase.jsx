@@ -2,7 +2,11 @@ import { useState } from 'react'
 import Boton from '../forms/Boton/Boton'
 import './tableStyle.css'
 
+// este componente renderiza los casos nuevos
+
 const ListNewCase = (props)=>{
+
+    // de acuerdo al tipo se renderizam los casos
 
     const { type } = props
 
@@ -18,11 +22,17 @@ const ListNewCase = (props)=>{
         {id:3,titulo:'titulo3',fechaApertura:'1/1/2023',solicitante:'cliente3',tecnico:'tecnico3'}
     ]
 
+    // se guarda el estado para hacer visible la tabla
+
     const [viewNew, setViewNew] = useState(true)
+
+    // se cambia el estado de la vista
 
     function changeNew(){
         setViewNew(!viewNew)
     }
+
+    // dependiendo del tipo se renderiza la tabla respectiva
 
     const WhichTable = ()=>{
         if(type==='user') return(
@@ -64,6 +74,8 @@ const ListNewCase = (props)=>{
             </table>
         )
     }
+
+    // se retorna la tabla con los datos respectivos
 
     return(
         <div className='tableContainer'>

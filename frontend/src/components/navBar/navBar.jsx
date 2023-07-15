@@ -1,63 +1,59 @@
+import { useState, useEffect, useRef, useContext } from 'react';
+import SessionContext from '../../context/sesionContext';
 import Boton from '../forms/Boton/Boton';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
-import { useState, useEffect, useRef, useContext } from 'react';
-import SessionContext from '../../context/sesionContext';
 
-{/**la barra de navegacion se va a tener disponible dentro del panel */}
+//la barra de navegacion se va a tener disponible dentro del panel
 
 const NavBar = () => {
 
+  // se traen los datos de la sesion 
+
   const { logout, user, rol } = useContext(SessionContext);
 
-  const handleClick = () => {
+  // funcion para cerrar la sesion y borrar los datos referentes a la sesion
+
+  const logOut = () => {
     logout()
     setTimeout(() => {
       localStorage.removeItem('userName');
     }, 500);
   };
 
-  /**
-   * se crea una variable para manejar el estado del menu de usuario, si es falso no se muestra y si
-   * es verdadero se muestra en pantalla
-   */
+  // se crea una variable para manejar el estado del menu de usuario, si es falso no se muestra y si
+  // es verdadero se muestra en pantalla
 
   const [menuVisible, setMenuVisible] = useState(false);
 
-  /**
-   * se maneja la referencia menuref para mejorar el comportamiento en caso de que se haga click
-   * en un lado de la pantalla diferente al menu
-   */
+  // se maneja la referencia menuref para mejorar el comportamiento en caso de que se haga click
+  // en un lado de la pantalla diferente al menu
   const menuRef = useRef(null);
 
-  /**
-   * esta funcion se utiliza para cambiar el estado del menu
-   */
+  // esta funcion se utiliza para cambiar el estado del menu
 
   const userMenu = () => {
     setMenuVisible(!menuVisible)
   };
 
-  /**cuando se haga click en una parte de la pantalla diferente al menu de usuario y
-   * este se esté visualizando en la pantalla, entonces este se oculta
-   */
+  // cuando se haga click en una parte de la pantalla diferente al menu de usuario y
+  // este se esté visualizando en la pantalla, entonces este se oculta
 
   useEffect(() => {
     const handleClickOutside = (event) => {
         if (menuRef.current && !menuRef.current.contains(event.target)) {
-          /**
-           * en este caso para que no ocurra un error frente cuando se presione el boton nuevamente
-           * se da un tiempo minimo de espera para que el estado cambie
-           */
-            setTimeout(() => {
-                setMenuVisible(false);
-            }, 100);
-            
+          
+          // en este caso para que no ocurra un error frente cuando se presione el boton nuevamente
+          // se da un tiempo minimo de espera para que el estado cambie
+
+          setTimeout(() => {
+            setMenuVisible(false);
+          }, 100);        
         }
     };
 
     if(menuVisible){
-        document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
@@ -65,13 +61,11 @@ const NavBar = () => {
     };
   }, [menuVisible]);
 
-  /**
-   * la barra de navegacion se divide en tres partes
-   * 1. logo
-   * 2. menu de navegacion que dependiendo del tipo de usuario se muestran diferentes opciones
-   * 3. rol del usuario, iniciales del nombre del usuario, y el menu de usuario que se maneja con un boton
-   * para que pueda visualizarse en pantalla
-   */
+  // la barra de navegacion se divide en tres partes
+  // 1. logo
+  // 2. menu de navegacion que dependiendo del tipo de usuario se muestran diferentes opciones
+  // 3. rol del usuario, iniciales del nombre del usuario, y el menu de usuario que se maneja con un boton
+  // para que pueda visualizarse en pantalla
 
   return (
     <div className="grid nav col-nav">
@@ -95,7 +89,7 @@ const NavBar = () => {
         </Boton>
         {menuVisible && (
           <div ref={menuRef} id='opciones'>
-            <Link to='/inicio/login' className='opcuser flex' onClick={handleClick}>cerrar sesion</Link>
+            <Link to='/inicio/login' className='opcuser flex' onClick={logOut}>cerrar sesion</Link>
             <Link to='/panel/preferences' className='opcuser flex'>preferencias</Link>
           </div>
         )}

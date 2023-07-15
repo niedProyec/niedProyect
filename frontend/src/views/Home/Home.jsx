@@ -1,16 +1,14 @@
-import { Link } from 'react-router-dom'
 import Boton from '../../components/forms/Boton/Boton'
+import { Link } from 'react-router-dom'
 import './Home.css'
 
-{/**este modulo renderiza el dashboard principal del panel */}
+// este modulo renderiza el dashboard principal del panel
 
 const Home = ()=>{
 
-    /**
-     * este sistema contiene dos modulos
-     * 1. muestra todos los datos correspondientes al usuario que inicia sesion
-     * 2. muestra todos los datos a nivvel global que se han estado almacenando
-     */
+    // este sistema contiene dos modulos
+    // 1. muestra todos los datos correspondientes al usuario que inicia sesion
+    // 2. muestra todos los datos a nivvel global que se han estado almacenando
 
     return(
         <div className="grid col-vi Home">

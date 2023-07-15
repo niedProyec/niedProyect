@@ -1,23 +1,34 @@
-import { useContext, useEffect, useState } from 'react'
-import SessionContext from '../../context/sesionContext'
-import Boton from '../../components/forms/Boton/Boton'
-import Input from '../../components/forms/Input/Input'
-import './UserPreferences.css'
-import { PassUpdate } from '../../services/PassUpdate'
-import { UserData } from '../../services/DataUser'
 import { UpdateUserData } from '../../services/updateData'
+import SessionContext from '../../context/sesionContext'
+import { useContext, useEffect, useState } from 'react'
+import Boton from '../../components/forms/Boton/Boton'
+import { PassUpdate } from '../../services/PassUpdate'
+import Input from '../../components/forms/Input/Input'
+import { UserData } from '../../services/DataUser'
+import './UserPreferences.css'
+
+// mostramos los datos del usuario y la configuracion de la cuenta
 
 const UserPreferences = ()=>{
 
+    // se trae los datos de la sesion
+
     const { user, userName, rol, name, lastName, cel, correo, login} = useContext(SessionContext)
 
+    // la constante de vista nos ayuda a renderizar el panel
+
     const [vista, setVista] = useState(true)
+
+    // las constantes siguientes guardaran los datos del usuario
+
     const [roles, setRoles] = useState("")
     const [nombre, setNombre] = useState("")
     const [apellido, setApellido] = useState("")
     const [password, setPassword] = useState("")
     const [celular, setCelular] = useState("")
     const [correou, setCorreoU] = useState("")
+
+    // guardamos los datos del usuario en las constantes anteriores
 
     useEffect(()=>{
         setTimeout(()=>{
@@ -29,12 +40,17 @@ const UserPreferences = ()=>{
         },100);
     },[])
 
+    // se maneja el renderizado de las vistas
+
     const pes1 = vista? 'active':'disable'
+
+    // se cambia la vista
 
     function changeView(){
         setVista(true)
     }
 
+    // al presionar el boton se tiene dos procesos, actualizar la contraseña y los datos del usuario
     async function updateI(evento) {
         evento.preventDefault()
         if (password) {
@@ -49,8 +65,10 @@ const UserPreferences = ()=>{
             const data = await UserData(userName)
             login(data[0])
         }
-      }
-      
+    }
+    
+    // se retorna un formulario en el que se puede visualizar los datos de usuario y asi mismo actualizarlos
+
     return(
         <div className="flex userp">
             <div className='usp'>

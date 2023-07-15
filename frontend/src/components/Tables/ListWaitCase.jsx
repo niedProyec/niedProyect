@@ -2,7 +2,12 @@ import { useState } from 'react'
 import Boton from '../forms/Boton/Boton'
 import './tableStyle.css'
 
+// este componente renderiza los casos en espera
+
 const ListWaitCase = (props)=>{
+
+    // de acuerdo al tipo se renderizam los casos
+
     const { type } = props
 
     const CasosEsperaUs=[
@@ -17,11 +22,17 @@ const ListWaitCase = (props)=>{
         {id:9,titulo:'titulo9',fechaApertura:'1/1/2023',solicitante:'cliente9',tecnico:'tecnico9'}
     ]
 
+    // se guarda el estado para hacer visible la tabla
+
     const [viewWait, setViewWait] = useState(true)
+
+    // se cambia el estado de la vista
 
     function changeWait(){
         setViewWait(!viewWait)
     }
+
+    // dependiendo del tipo se renderiza la tabla respectiva
 
     const WhichTable = ()=>{
         if(type==='user') return(
@@ -64,18 +75,20 @@ const ListWaitCase = (props)=>{
         )
     }
 
+    // se retorna la tabla con los datos respectivos
+
     return(
         <div className='tableContainer'>
-                <div className='title-wait grid'>
-                    <span className='text-table flex'>En espera</span>
-                    <span className='text-table flex inv'>
-                        <Boton style='arrow' onClick={changeWait}><i className="bi bi-chevron-down"></i></Boton>
-                    </span>
-                </div>
-                <div className={ viewWait? 'visible' : 'oculta'}>
-                    <WhichTable></WhichTable>
-                </div>
+            <div className='title-wait grid'>
+                <span className='text-table flex'>En espera</span>
+                <span className='text-table flex inv'>
+                    <Boton style='arrow' onClick={changeWait}><i className="bi bi-chevron-down"></i></Boton>
+                </span>
             </div>
+            <div className={ viewWait? 'visible' : 'oculta'}>
+                <WhichTable></WhichTable>
+            </div>
+        </div>
     )
 }
 

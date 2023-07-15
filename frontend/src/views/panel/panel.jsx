@@ -8,11 +8,15 @@ import './panel.css'
 import { UserData } from '../../services/DataUser'
 import UserPreferences from '../UserPreferenes/UserPreferences'
 
-{/**en este modulo se muestra el dashboard de usuario */}
+// en este modulo se muestra el dashboard de usuario
 
 const Panel = ()=>{
 
+    // nos traemos la informacion necesaria de la sesion
+
     const { user, login, rol } = useContext(SessionContext);
+
+    // antes de cargar la pagina se cargan los datos en la sesion del usuario
 
     useEffect(()=>{
         const fetchData = async () => {
@@ -23,10 +27,9 @@ const Panel = ()=>{
         fetchData();
     },[login])
 
-    /**esta vista contiene una barra de navegacion
-     * así mismo contiene diversas rutas en la que el usuario podrá navegar
-     * e interartuar con las mismas
-     */
+    // esta vista contiene una barra de navegacion
+    // así mismo contiene diversas rutas en la que el usuario podrá navegar
+    // e interartuar con las mismas
 
     return(
         <div className='panel'>

@@ -1,11 +1,11 @@
-import { useState } from 'react'
-import Boton from '../forms/Boton/Boton'
-import './dsTable.css'
-import ListNewCase from '../Tables/ListNewCase.jsx'
-import ListProcessCase from '../Tables/ListProcessCase.jsx'
-import ListWaitCase from '../Tables/ListWaitCase.jsx'
-import ListFinishCase from '../Tables/ListFinishCase.jsx'
 import ListGarantiaCase from '../Tables/ListGarantiaCase.jsx'
+import ListProcessCase from '../Tables/ListProcessCase.jsx'
+import ListFinishCase from '../Tables/ListFinishCase.jsx'
+import ListWaitCase from '../Tables/ListWaitCase.jsx'
+import ListNewCase from '../Tables/ListNewCase.jsx'
+import './dsTable.css'
+
+//esta fucion nos trae una a una las tablas con los casos a nivel global
 
 const DsTableGlobal = ()=>{
 
@@ -16,9 +16,6 @@ const DsTableGlobal = ()=>{
             <ListWaitCase type='global'></ListWaitCase>
             <ListFinishCase type='global'></ListFinishCase>
             <ListGarantiaCase type='global'></ListGarantiaCase>
-            
-            
-            
         </div>
     )
 }

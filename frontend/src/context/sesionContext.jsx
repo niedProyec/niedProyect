@@ -1,16 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+// se crea un contexto para manerjar las sesiones
+
 const SessionContext =  React.createContext();
+
+// en las props recibe el children
 
 export const SessionProvider = (props)=>{
 
+    // se crea una constante para navegar
+
     const navigate = useNavigate();
+
+    // en caso de que no halla una sesion iniciada se direcciona al login
 
     useEffect(() => {
         const data = localStorage.getItem('userName');
         if (!data) navigate('/inicio/login');
     }, []);
+
+    // se tienen las constantes con sus respectivos estados
 
     const { children } = props
     const [isLogedIn, setIsLogedIn] = useState(false);
@@ -21,6 +31,8 @@ export const SessionProvider = (props)=>{
     const [lastName, setLastName] = useState(null)
     const [cel, setCel] = useState(null)
     const [correo, setCorreo] = useState(null)
+
+    // la funcion de login coloca los datos requeridos en la sesion
 
     const login = (data)=>{
         setTimeout(() => {
@@ -35,6 +47,8 @@ export const SessionProvider = (props)=>{
         }, 100);
     }
 
+    // la funcion logout cierra la sesion y coloca los datos del usuario en nulo
+
     const logout = ()=>{
         setUser(null)
         setUserName(null)
@@ -45,6 +59,8 @@ export const SessionProvider = (props)=>{
         setCorreo(null)
         setIsLogedIn(false)
     }
+
+    // con esta constante se acceden a los diferentes parametros de la sesion
 
     const sessionContextValue = {
         isLogedIn,
@@ -59,6 +75,8 @@ export const SessionProvider = (props)=>{
         logout,
     }
 
+    // se retorna el contexto
+    
     return(
         <SessionContext.Provider value={sessionContextValue}>
             {children}

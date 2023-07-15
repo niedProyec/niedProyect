@@ -1,5 +1,7 @@
-import { Route, Routes } from "react-router-dom"
 import DsTableUser from "../../components/dsTable/dsTableUser"
+import { Route, Routes } from "react-router-dom"
+
+// renderiza el dashboard de los casos a nivel del tecnico
 
 const UserDashboard = ()=>{
     return(

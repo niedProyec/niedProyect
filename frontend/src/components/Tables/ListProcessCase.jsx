@@ -2,7 +2,12 @@ import { useState } from 'react'
 import Boton from '../forms/Boton/Boton'
 import './tableStyle.css'
 
+// este componente renderiza los casos en proceso
+
 const ListProcessCase = (props)=>{
+
+    // de acuerdo al tipo se renderizam los casos
+
     const { type } = props
 
     const CasosProcesoUs=[
@@ -17,11 +22,17 @@ const ListProcessCase = (props)=>{
         {id:6,titulo:'titulo6',fechaApertura:'1/1/2023',solicitante:'cliente6',tecnico:'tecnico6'}
     ]
 
+    // se guarda el estado para hacer visible la tabla
+
     const [viewProcess, setViewProcess] = useState(true)
+
+    // se cambia el estado de la vista
 
     function changeProcess(){
         setViewProcess(!viewProcess)
     }
+
+    // dependiendo del tipo se renderiza la tabla respectiva
 
     const WhichTable = ()=>{
         if(type==='user') return(
@@ -64,18 +75,20 @@ const ListProcessCase = (props)=>{
         )
     }
 
+    // se retorna la tabla con los datos respectivos
+
     return(
         <div className='tableContainer'>
-                <div className='title-process grid'>
-                    <span className='text-table flex'>En proceso</span>
-                    <span className='text-table flex inv'>
-                        <Boton style='arrow' onClick={changeProcess}><i className="bi bi-chevron-down"></i></Boton>
-                    </span>
-                </div>
-                <div className={ viewProcess? 'visible' : 'oculta'}>
-                    <WhichTable></WhichTable>
-                </div>
+            <div className='title-process grid'>
+                <span className='text-table flex'>En proceso</span>
+                <span className='text-table flex inv'>
+                    <Boton style='arrow' onClick={changeProcess}><i className="bi bi-chevron-down"></i></Boton>
+                </span>
             </div>
+            <div className={ viewProcess? 'visible' : 'oculta'}>
+                <WhichTable></WhichTable>
+            </div>
+        </div>
     )
 }
 
