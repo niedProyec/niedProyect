@@ -1,10 +1,10 @@
-import express from 'express';
-import pg from 'pg';
 import userRouter from './Routes/UserRouter.js';
+import express from 'express';
 import cors from 'cors'
+import pg from 'pg';
 
+const puerto = 8090;
 const app = express();
-const puerto = process.env.PORT || 8090;
 
 
 //asignamos el puerto para que se ejecute el servidor
@@ -32,7 +32,9 @@ credenciales.connect((err)=>{
 
 //cors nos permite recibir peticiones desde la direccion especificada
 app.use(cors({origin:"http://localhost:5173"}))
+
 //nos permite utilizar los archivos json
 app.use(express.json());
+
 //redirecciona a las rutas de user
 app.use("/user", userRouter);
