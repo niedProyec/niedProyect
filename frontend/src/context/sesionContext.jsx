@@ -44,7 +44,7 @@ export const SessionProvider = (props)=>{
             setCel(data.numero_celular)
             setCorreo(data.correo)
             setIsLogedIn(true)
-        }, 100);
+        }, 20);
     }
 
     // la funcion logout cierra la sesion y coloca los datos del usuario en nulo

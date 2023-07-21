@@ -67,3 +67,30 @@
     background-color: transparent;
     transition: 0.5s;
 }
+
+.btn-add{
+    height: 30px;
+    padding: 0 10px;
+    width: 140px;
+    background-color: #65b5ff;
+    border: 1px solid #65b5ff;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn-add:hover{
+    background-color: #2895fa;
+}
+
+.btn-close{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: #cfcfcf;
+    font-size: 15px;
+}
+
+.btn-close:hover{
+    color: red;
+}

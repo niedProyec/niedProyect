@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useContext } from 'react';
 import SessionContext from '../../context/sesionContext';
+import { userModel } from '../../models/user';
 import Boton from '../forms/Boton/Boton';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
@@ -24,7 +25,7 @@ const NavBar = () => {
   // se crea una variable para manejar el estado del menu de usuario, si es falso no se muestra y si
   // es verdadero se muestra en pantalla
 
-  const [menuVisible, setMenuVisible] = useState(false);
+  const [menuVisible, setMenuVisible] = useState();
 
   // se maneja la referencia menuref para mejorar el comportamiento en caso de que se haga click
   // en un lado de la pantalla diferente al menu
@@ -40,6 +41,7 @@ const NavBar = () => {
   // este se esté visualizando en la pantalla, entonces este se oculta
 
   useEffect(() => {
+
     const handleClickOutside = (event) => {
         if (menuRef.current && !menuRef.current.contains(event.target)) {
           
@@ -77,6 +79,7 @@ const NavBar = () => {
           <li><Link to='/panel/home' className='btnopc'>inicio</Link></li>
           <li><Link to='/panel/support/user/principal' className='btnopc'>soporte</Link></li>
           <li>crear caso</li>
+          <li><Link to='/panel/users' className='btnopc'>usuarios</Link></li>
         </ul>
       </div>
       <div className='flex conf'>

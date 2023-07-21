@@ -1,5 +1,4 @@
 import Login from '../../components/forms/FormLogin/Login.jsx'
-import Forget from '../../components/forms/forget/Forget.jsx'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import './Inicio.css'
 
@@ -21,7 +20,6 @@ const Inicio = ()=>{
                     <Routes>
                         <Route path='/' element={<Navigate to='/inicio/login'></Navigate>}></Route>
                         <Route path='/login' element={<Login></Login>}></Route>
-                        <Route element={<Forget></Forget>} path="/forget"></Route>
                     </Routes>
                 </div>
             </div>

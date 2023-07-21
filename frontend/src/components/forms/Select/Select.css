@@ -1,0 +1,31 @@
+.caja {
+    border:1px solid #248cee;
+    height:30px;
+    overflow: hidden;
+    width: 230px;
+    position:relative;
+ }
+
+ select {
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    width: 230px;
+ }
+
+ select:focus{ outline: none;}
+
+ .caja::after{
+	content:"\025be";
+	padding-top:7px;
+	text-align:center;
+	width:30px;
+	height:30px;
+	background-color:#248cee;
+	position:absolute;
+	top:0;
+	right:0px;	
+	pointer-events: none;
+}

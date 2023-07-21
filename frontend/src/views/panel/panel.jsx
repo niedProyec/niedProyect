@@ -1,12 +1,13 @@
-import { Route, Routes } from 'react-router-dom'
-import { useContext, useEffect } from 'react'
+import UserPreferences from '../UserPreferenes/UserPreferences'
 import SessionContext from '../../context/sesionContext'
 import NavBar from '../../components/navBar/navBar'
-import Home from '../Home/Home'
-import Support from '../support/Support'
-import './panel.css'
 import { UserData } from '../../services/DataUser'
-import UserPreferences from '../UserPreferenes/UserPreferences'
+import { Route, Routes } from 'react-router-dom'
+import { useContext, useEffect } from 'react'
+import AdminUsers from '../users/AdminUsers'
+import Support from '../support/Support'
+import Home from '../Home/Home'
+import './panel.css'
 
 // en este modulo se muestra el dashboard de usuario
 
@@ -40,6 +41,7 @@ const Panel = ()=>{
                 <Route path='/home' element={<Home></Home>}></Route>
                 <Route path='/support/*' element={<Support></Support>}></Route>
                 <Route path='/preferences' element={<UserPreferences></UserPreferences>}></Route>
+                <Route path='/users' element={<AdminUsers></AdminUsers>}></Route>
             </Routes>
         </div>
     )

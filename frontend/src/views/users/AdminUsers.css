@@ -1,0 +1,19 @@
+.user-container{
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.ds-users{
+    width: 80%;
+}
+
+.btn-opciones{
+    position: relative;
+    z-index: 1;
+    top: 1px;
+}
+
+.boton-agregar{
+    justify-content: end;
+    margin: 10px 0;
+}
