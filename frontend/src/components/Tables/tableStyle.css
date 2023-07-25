@@ -84,3 +84,22 @@ th{
     height: 0;
     overflow: hidden;
   }
+
+ .userList th{
+    background-color: #2d6ee6;
+    color: white;
+  }
+
+  .userList tr:nth-child(even) td {
+    background-color: rgb(236, 236, 236); /* Color para los td pares */
+  }
+  
+  /* Estilos para los td impares */
+  .userList tr:nth-child(odd) td {
+    background-color: #fcfcfc; /* Color para los td impares */
+  }
+
+  .userList tr:hover td{
+    background-color: #c4c4c4;
+    transition: 0.2s;
+  }

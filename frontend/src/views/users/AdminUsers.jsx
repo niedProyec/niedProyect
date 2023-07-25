@@ -25,7 +25,7 @@ const AdminUsers = ()=>{
         if(vista){
             return (<Boton style='add' onClick={handleOpenForm}>Agregar usuario</Boton>)
         }else{
-            return(<Boton style='add'>Agregar cliente</Boton>)
+            return(<Boton style='add' onClick={handleOpenForm}>Agregar cliente</Boton>)
         }
     }
 
@@ -59,37 +59,7 @@ const AdminUsers = ()=>{
                         <AddUser></AddUser>
                     </div>
                     <TableView></TableView>
-                    {showForm && <FormularioEmergente onClose={handleCloseForm} />}
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
-                    <p>hola</p>
+                    {showForm && <FormularioEmergente onClose={handleCloseForm} desForm={vista}/>}
                 </div>
             </div>
         </div>

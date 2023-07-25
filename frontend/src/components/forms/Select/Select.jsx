@@ -2,13 +2,13 @@ import './Select.css'
 
 const Select = (props)=>{
 
-    const { data } = props
+    const { data, onChange } = props
 
     return(
         <div className="caja">
-            <select >
+            <select onChange={onChange}>
                 {Object.entries(data).map(([rol, id]) => (
-                    <option key={id} value={id}>{rol}</option>
+                    <option value={id}>{rol}</option>
                 ))}
           </select>
         </div>

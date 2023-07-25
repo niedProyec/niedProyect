@@ -65,12 +65,41 @@ export async function UpdateCredentials(req,res){
 // res devuelve el resultado de exito
 // la funcion tiene como proposito actualizar los datos del usuario
 
-export async function UpdateUserData(req,res){
+export async function UpdateUserData(req, res){
   const {name, lastname, cel, user} = req.headers;
   let documento = null;
   try{
-    documento = await credenciales.query(`select update_user_data('${name}','${lastname}','${cel}','${user}')`)
+    documento = await credenciales.query(`select update_user_data('${name}','${lastname}','${cel}','${user}')`);
     res.status(200).json({ message: "Éxito" });
+  }catch(err){
+    res.status(400)
+    res.json(err)
+  }
+}
+
+
+// esta funcion recibe dos parametros
+// req trae la informacion requerida para del usuario o cliente que se va a agregar
+// res devuelve exito como resultado
+// la funcion tiene el proposito de insertar nuevos usuarios
+
+export async function AddUser(req, res){
+  const {cedula, name, lastname, cel, correo, direccion, rol, nom, pass} = req.headers;
+  let documento = null;
+  try{
+    documento = await credenciales.query(`select create_user('${cedula}','${name}','${lastname}','${cel}','${correo}','${direccion}','${rol}','${nom}','${pass}')`)
+    res.status(200).json({ message: "Exito"});
+  }catch(err){
+    res.status(400)
+    res.json(err)
+  }
+}
+
+export async function ListUsers(req, res){
+  let documento = null;
+  try{
+    documento = await credenciales.query('select user_list()');
+    res.status(200).json(documento.rows)
   }catch(err){
     res.status(400)
     res.json(err)
