@@ -8,6 +8,8 @@ import AdminUsers from '../users/AdminUsers'
 import Support from '../support/Support'
 import Home from '../Home/Home'
 import './panel.css'
+import CreateCase from '../CreateCase/CreateCase'
+import Case from '../Case/TecCase'
 
 // en este modulo se muestra el dashboard de usuario
 
@@ -15,7 +17,7 @@ const Panel = ()=>{
 
     // nos traemos la informacion necesaria de la sesion
 
-    const { user, login, rol } = useContext(SessionContext);
+    const { login } = useContext(SessionContext);
 
     // antes de cargar la pagina se cargan los datos en la sesion del usuario
 
@@ -35,13 +37,15 @@ const Panel = ()=>{
     return(
         <div className='panel'>
             <div className='sticking'>
-            <NavBar user={user} rol={rol}></NavBar>
+            <NavBar></NavBar>
             </div>
             <Routes>
                 <Route path='/home' element={<Home></Home>}></Route>
                 <Route path='/support/*' element={<Support></Support>}></Route>
                 <Route path='/preferences' element={<UserPreferences></UserPreferences>}></Route>
                 <Route path='/users' element={<AdminUsers></AdminUsers>}></Route>
+                <Route path='/NewCase' element={<CreateCase></CreateCase>}></Route>
+                <Route path='/case/:id' element={<Case></Case>}></Route>
             </Routes>
         </div>
     )

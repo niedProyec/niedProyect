@@ -1,15 +1,29 @@
+import FormularioEmergente from '../../components/forms/emergente/formEmergente.jsx'
 import ListCliente from '../../components/Tables/ListCliente.jsx'
 import Boton from '../../components/forms/Boton/Boton.jsx'
 import ListTec from '../../components/Tables/ListTec.jsx'
-import { useState } from 'react'
+import SessionContext from '../../context/sesionContext';
+import { useEffect, useState, useContext } from 'react'
 import './AdminUsers.css'
-import FormularioEmergente from '../../components/forms/emergente/formEmergente.jsx'
 
 // este modulo permitira al los usuarios administradores administrar los usuarios del sistema
 
 const AdminUsers = ()=>{
 
-    const [vista, setVista] = useState(true)
+    const { rol } = useContext(SessionContext);
+
+    
+    const [rend, setRend] = useState(true)
+    const [vista, setVista] = useState()
+
+    useEffect(()=>{
+        if(rol === "tecnico"){
+            setRend(false)
+            setVista(false)
+        }else{
+            setVista(true)
+        }
+    },[])
 
     const pes1 = vista? 'active':'disable'
     const pes2 = vista? 'disable':'active'
@@ -17,6 +31,7 @@ const AdminUsers = ()=>{
     function pes1A(){
         setVista(true)
     }
+
     function pes2A(){
         setVista(false)
     }
@@ -51,7 +66,7 @@ const AdminUsers = ()=>{
         <div className='user-container flex'>
             <div className='ds-users'>
                 <div className='btn-opciones flex'>
-                    <Boton style={'pes ' + pes1} onClick={pes1A}>Tecnicos</Boton>
+                    {rend && <Boton style={'pes ' + pes1} onClick={pes1A}>Tecnicos</Boton>}
                     <Boton style={'pes ' + pes2} onClick={pes2A}>Clientes</Boton>
                 </div>
                 <div className='dashboard'>

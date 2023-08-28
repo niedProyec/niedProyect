@@ -1,4 +1,4 @@
-.caja {
+.bblue {
     border:1px solid #248cee;
     height:30px;
     overflow: hidden;
@@ -17,7 +17,7 @@
 
  select:focus{ outline: none;}
 
- .caja::after{
+ .bblue::after{
 	content:"\025be";
 	padding-top:7px;
 	text-align:center;
@@ -28,4 +28,8 @@
 	top:0;
 	right:0px;	
 	pointer-events: none;
+}
+
+.ps{
+   margin-bottom: 5px;
 }

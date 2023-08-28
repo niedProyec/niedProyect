@@ -1,0 +1,23 @@
+.txt-new{
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid #BCBCBC;
+    width: 90%;
+    height: 180px;
+    box-sizing: border-box;
+    padding: 10px;
+    resize: none;
+}
+
+.txt-new:focus{
+    outline: none;
+    border: 1px solid #49c6ff;
+}
+
+.p-new{
+    margin-bottom: 10px;
+}
+
+.cont1{
+    width: 100%;
+}

@@ -31,12 +31,14 @@ export const SessionProvider = (props)=>{
     const [lastName, setLastName] = useState(null)
     const [cel, setCel] = useState(null)
     const [correo, setCorreo] = useState(null)
+    const [cedula, setCedula] = useState(null)
 
     // la funcion de login coloca los datos requeridos en la sesion
 
     const login = (data)=>{
         setTimeout(() => {
             setUserName(data.usuario)
+            setCedula(data.identificacion)
             setUser(userName.slice(0,2).toUpperCase())
             setRol(data.rol)
             setName(data.nombre)
@@ -52,6 +54,7 @@ export const SessionProvider = (props)=>{
     const logout = ()=>{
         setUser(null)
         setUserName(null)
+        setCedula(null)
         setRol(null)
         setName(null)
         setLastName(null)
@@ -67,6 +70,7 @@ export const SessionProvider = (props)=>{
         userName,
         user,
         rol,
+        cedula,
         name,
         lastName,
         cel,

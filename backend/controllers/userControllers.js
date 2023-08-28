@@ -98,7 +98,18 @@ export async function AddUser(req, res){
 export async function ListUsers(req, res){
   let documento = null;
   try{
-    documento = await credenciales.query('select user_list()');
+    documento = await credenciales.query('select*from user_list()');
+    res.status(200).json(documento.rows)
+  }catch(err){
+    res.status(400)
+    res.json(err)
+  }
+}
+
+export async function ListCliente(req, res){
+  let documento = null;
+  try{
+    documento = await credenciales.query('select*from cliente_list()');
     res.status(200).json(documento.rows)
   }catch(err){
     res.status(400)

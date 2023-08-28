@@ -6,7 +6,7 @@ import './FormularioEmergente.css';
 import Select from '../Select/Select.jsx';
 import { AddUser } from '../../../services/AddUser.js';
 
-const FormularioEmergente = ({ onClose, desForm }) => {
+const FormularioEmergente = ({ onClose, desForm}) => {
   
   const [isVisible, setIsVisible] = useState(true);
   const [cedula, setCedula] = useState('');
@@ -41,7 +41,7 @@ const FormularioEmergente = ({ onClose, desForm }) => {
     if(desForm){
       const res = await AddUser(cedula,nombre,apellido,celular,correo,direccion,rol,usuario,password);
       if(res){
-        alert("usuario agregado")
+        alert("cliente agregado")
       }
     }else{
       const res = await AddUser(cedula,nombre,apellido,celular,correo,direccion,3,usuario,password);
@@ -69,18 +69,18 @@ const FormularioEmergente = ({ onClose, desForm }) => {
                     <div className='co-form flex'>
                       <Input style='add-user' pos='add' onChange={(val)=>setCedula(val.target.value)}>Cedula</Input>
                       <Input style='add-user' pos='add' onChange={(val)=>setNombre(val.target.value)}>Nombre</Input>
-                      <Input style='add-user' pos='add' onChange={(val)=>setApellido(val.target.value)}>Apellido</Input>
+                      <Input style='add-user' pos='add' onChange={(val)=>setCorreo(val.target.value)}>Correo</Input>
                       {desForm && <Input style='add-user' pos='add' onChange={(val)=>setUsuario(val.target.value)}>usuario</Input>}
                     </div>
                     <div className='co-form flex'>
                       <Input style='add-user' pos='add' onChange={(val)=>setCelular(val.target.value)}>Celular</Input>
-                      <Input style='add-user' pos='add' onChange={(val)=>setCorreo(val.target.value)}>Correo</Input>
+                      {desForm && <Input style='add-user' pos='add' onChange={(val)=>setApellido(val.target.value)}>Apellido</Input>}
                       <Input style='add-user' pos='add' onChange={(val)=>setDireccion(val.target.value)}>Direccion</Input>
                       {desForm && <Input style='add-user' pos='add' type='password' onChange={(val)=>setPassword(val.target.value)}>Contraseña</Input>}
                     </div>
                     {desForm && <div className='co1-form flex'>
                       <p className='rols'>Rol:</p>
-                      <Select data={roles} onChange={(val)=>setRol(val.target.value)}></Select>
+                      <Select style='bblue' data={roles} onChange={(val)=>setRol(val.target.value)}></Select>
                     </div>}
                   </form>
                 </div>

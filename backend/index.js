@@ -2,6 +2,7 @@ import userRouter from './Routes/UserRouter.js';
 import express from 'express';
 import cors from 'cors'
 import pg from 'pg';
+import CaseRouter from './Routes/CaseRouter.js';
 
 const puerto = 8090;
 const app = express();
@@ -38,3 +39,4 @@ app.use(express.json());
 
 //redirecciona a las rutas de user
 app.use("/user", userRouter);
+app.use("/case", CaseRouter);

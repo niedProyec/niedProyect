@@ -1,5 +1,5 @@
 import express from "express";
-import { DataUser, ValidateCredentials, UpdateCredentials, UpdateUserData, AddUser, ListUsers } from "../controllers/userControllers.js";
+import { DataUser, ValidateCredentials, UpdateCredentials, UpdateUserData, AddUser, ListUsers, ListCliente } from "../controllers/userControllers.js";
 
 const userRouter = express.Router();
 
@@ -24,6 +24,10 @@ userRouter.get("/data",(req,res)=>{
 userRouter.get("/users",(req,res)=>{
     ListUsers(req, res);
 });
+
+userRouter.get("/cliente",(req, res)=>{
+    ListCliente(req,res);
+})
 
 
 //actualizar

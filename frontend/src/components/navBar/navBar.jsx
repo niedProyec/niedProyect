@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef, useContext } from 'react';
 import SessionContext from '../../context/sesionContext';
-import { userModel } from '../../models/user';
 import Boton from '../forms/Boton/Boton';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
@@ -78,7 +77,7 @@ const NavBar = () => {
         <ul className='flex menu'>
           <li><Link to='/panel/home' className='btnopc'>inicio</Link></li>
           <li><Link to='/panel/support/user/principal' className='btnopc'>soporte</Link></li>
-          <li>crear caso</li>
+          <li><Link to='/panel/NewCase' className='btnopc'>crear caso</Link></li>
           <li><Link to='/panel/users' className='btnopc'>usuarios</Link></li>
         </ul>
       </div>

@@ -1,0 +1,32 @@
+.CreateContainer{
+    justify-content: center;
+    padding-top: 25px;
+}
+
+.containerform{
+    background-color: #F8F8F8;
+    width: 80%;
+    border: 1px solid #C3C3C3;
+}
+
+.headerCreate{
+    padding: 17px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #C3C3C3;
+}
+
+.createTitle{
+    width: 70%;
+    align-items: center;
+}
+
+.createbtn{
+    width: 30%;
+    justify-content: end;
+}
+
+.createForm{
+    padding: 25px 17px;
+    box-sizing: border-box;
+    grid-template-columns: 2fr 1fr;
+}

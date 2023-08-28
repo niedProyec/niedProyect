@@ -14,6 +14,5 @@ export async function UpdateUserData(nombre, apellido, celular, userName){
             user:userName
         }
     })
-    console.log('Respuesta del servidor:', res);
     return res.json()
 }

@@ -79,3 +79,28 @@
 .lb-add-user{
     font-size: 18px;
 }
+
+.inp-create{
+    width: 90%;
+    padding: 0px 10px;
+    border: 1px solid #BCBCBC;
+    background-color: transparent;
+    border-radius: 10px;
+    height: 30px;
+    box-sizing: border-box;
+}
+
+.inp-create:focus{
+    outline: none;
+    border: 1px solid #49c6ff;
+}
+
+.lb-create{
+    margin-bottom: 8px;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
