@@ -1,10 +1,8 @@
 import ListGarantiaCase from '../Tables/ListGarantiaCase.jsx'
-import SessionContext from '../../context/sesionContext.jsx'
 import ListProcessCase from '../Tables/ListProcessCase.jsx'
 import ListFinishCase from '../Tables/ListFinishCase.jsx'
 import ListWaitCase from '../Tables/ListWaitCase.jsx'
 import ListNewCase from '../Tables/ListNewCase.jsx'
-import { useContext, useEffect, useState } from 'react'
 import './dsTable.css'
 
 //esta funcion trae una a una las tablas con los casos de acuerdo al usuario

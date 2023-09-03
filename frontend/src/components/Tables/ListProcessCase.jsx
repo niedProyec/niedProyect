@@ -1,6 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import Boton from '../forms/Boton/Boton'
 import './tableStyle.css'
+import SessionContext from '../../context/sesionContext.jsx'
+import { listProcTk } from '../../services/CaseServices'
+import { Link } from 'react-router-dom';
+
 
 // este componente renderiza los casos en proceso
 
@@ -10,11 +14,8 @@ const ListProcessCase = (props)=>{
 
     const { type } = props
 
-    const CasosProcesoUs=[
-        {id:4,titulo:'titulo4',fechaApertura:'1/1/2023',solicitante:'cliente4'},
-        {id:5,titulo:'titulo5',fechaApertura:'1/1/2023',solicitante:'cliente5'},
-        {id:6,titulo:'titulo6',fechaApertura:'1/1/2023',solicitante:'cliente6'}
-    ]
+    const { cedula } = useContext(SessionContext);
+    const [isLoading, setIsLoading] = useState(true);
 
     const CasosProcesoGl=[
         {id:4,titulo:'titulo4',fechaApertura:'1/1/2023',solicitante:'cliente4',tecnico:'tecnico4'},
@@ -24,13 +25,24 @@ const ListProcessCase = (props)=>{
 
     // se guarda el estado para hacer visible la tabla
 
-    const [viewProcess, setViewProcess] = useState(true)
+    const [viewProcess, setViewProcess] = useState(true);
+    const [CasosProcUs, setCasosProcUs] = useState();
 
     // se cambia el estado de la vista
 
     function changeProcess(){
         setViewProcess(!viewProcess)
     }
+
+    useEffect(() => {
+        const list = async () => {        
+            const data = await listProcTk(cedula);
+            setCasosProcUs(data);
+            setIsLoading(false); // Cambia a false después de cargar los datos
+        };
+    
+        list();
+    }, [cedula]);
 
     // dependiendo del tipo se renderiza la tabla respectiva
 
@@ -43,12 +55,13 @@ const ListProcessCase = (props)=>{
                     <th>Fecha de apertura</th>
                     <th>Solicitante</th>
                 </tr>
-                {CasosProcesoUs.map(caso => (
+                {isLoading ? ( <tr>cargando datos...</tr>) :
+                CasosProcUs.map(caso => (
                     <tr>
-                        <td>{caso.id}</td>
+                        <td><Link to={`/panel/case/${caso.id}`}><b>{caso.id}</b></Link></td>
                         <td>{caso.titulo}</td>
-                        <td>{caso.fechaApertura}</td>
-                        <td>{caso.solicitante}</td>
+                        <td>{new Date(caso.fecha).toLocaleDateString()}</td>
+                        <td>{caso.usuario}</td>
                     </tr>
                 ))}
             </table>

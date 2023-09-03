@@ -34,3 +34,46 @@ export async function listNewTk(identificacion){
     });
     return res.json()
 }
+
+export async function listProcTk(identificacion){
+    const res = await fetch(API_URL+'/case/proc',{
+        method:'GET',
+        headers:{
+            identificacion
+        }
+    });
+    return res.json()
+}
+
+export async function despCase(id){
+    const res = await fetch(API_URL+'/case/caseDesp',{
+        method:'GET',
+        headers:{
+            id
+        }
+    });
+    return res.json();
+}
+
+export async function commitCase(id){
+    const res = await fetch(API_URL+'/case/commit',{
+        method:'GET',
+        headers:{
+            id
+        }
+    });
+    return res.json();
+}
+
+export async function addCommit(comentario, tecnico, estado, ticket){
+    const res = await fetch(API_URL+'/case/add',{
+        method:'PUT',
+        headers:{
+            comentario,
+            tecnico,
+            estado,
+            ticket
+        }
+    });
+    return res.json();
+}

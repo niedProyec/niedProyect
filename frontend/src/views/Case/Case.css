@@ -1,4 +1,103 @@
+.case-container{
+    width: 100%;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.case-desc{
+    width: 80%;
+    background-color: #F8F8F8;
+    border: 1px #C3C3C3 solid;
+    
+}
+
+.case-header{
+    padding: 18px 20px;
+    box-sizing: border-box;
+    border-bottom: 1px #C3C3C3 solid;
+}
+
+.case-det-opc{
+    justify-content: center;
+    width: 50%;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-option{
+    gap: 10px;
+    width: 70%;
+    justify-content: end;
+}
+
+.case-det{
+    width: 100%;
+    padding: 18px 20px;
+    box-sizing: border-box;
+    border-bottom: 1px #C3C3C3 solid;
+}
+
+.case-title{
+    width: 100%;
+    text-align: center;
+    padding: 18px 20px;
+    box-sizing: border-box;
+    border-bottom: 1px #C3C3C3 solid;
+}
+
+.case-nb{
+    width: 30%;
+    align-items: center;
+    gap: 10px;
+}
+
+.case-des{
+    border: 1px #BCBCBC solid;
+    padding: 5px;
+    width: 250px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.case-seg{
+    padding: 20px;
+}
+
+.case-tec{
+    width: 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+.case-tec-des{
+    width: 90%;
+    padding: 25px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.user_tec{
+    width: 45px;
+    height: 45px;
+    background-color: #36B4CF;
+    border: #36B4CF 1px solid;
+    border-radius: 5px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.case-col-green{
+    background-color: #CDFFCC;
+    border: 1px #CDFFCC solid;
+}
+
+.case-col-bGreen{
+    border: 2px #04ff00 solid;
+}
+
 .container-cu{
+    
     width: 100%;
     background-color: #D2E2FF;
     justify-content: center;

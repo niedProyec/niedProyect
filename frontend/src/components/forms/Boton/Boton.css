@@ -71,16 +71,16 @@
 .btn-add{
     height: 30px;
     padding: 0 10px;
-    width: 140px;
-    background-color: #65b5ff;
-    border: 1px solid #65b5ff;
+    width: 150px;
+    background-color: #108afd;
+    border: 1px solid #108afd;
     color: white;
     cursor: pointer;
     transition: 0.5s;
 }
 
 .btn-add:hover{
-    background-color: #2895fa;
+    background-color: #44a5ff;
 }
 
 .btn-close{
