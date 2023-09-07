@@ -16,7 +16,7 @@ const Home = ()=>{
                 <div className='vis-container'>
                     <div className="grid col-tk principalPanel">
                         <div className='flex titlePrincipal'>
-                            <p><i class="bi bi-exclamation-circle"></i> <Link to='/panel/support/user/principal'className='txtl'>Tickets</Link></p>
+                            <p><i className="bi bi-exclamation-circle"></i> <Link to='/panel/support/user/principal'className='txtl'>Tickets</Link></p>
                         </div>
                         <div className='flex btnCreate'>
                             <Boton style='create'>Nuevo caso</Boton>
@@ -24,7 +24,7 @@ const Home = ()=>{
                     </div>
                     <div className="grid col-tk rowsOpc">
                         <div className='text flex'>
-                            <p><i class="bi bi-circle-fill cg"></i> nuevo</p>
+                            <p><i className="bi bi-circle-fill cg"></i> nuevo</p>
                         </div>
                         <div className='number flex'>
                             <p className='nbContainer flex center'>0</p>
@@ -32,7 +32,7 @@ const Home = ()=>{
                     </div>
                     <div className="grid col-tk rowsOpc">
                         <div className='text flex'>
-                            <p><i class="bi bi-circle cg"></i> en proceso</p>
+                            <p><i className="bi bi-circle cg"></i> en proceso</p>
                         </div>
                         <div className='number flex'>
                             <p className='nbContainer flex center'>0</p>
@@ -40,7 +40,7 @@ const Home = ()=>{
                     </div>
                     <div className="grid col-tk rowsOpc">
                         <div className='text flex'>
-                            <p><i class="bi bi-circle-fill cy"></i> en espera</p>
+                            <p><i className="bi bi-circle-fill cy"></i> en espera</p>
                         </div>
                         <div className='number flex'>
                             <p className='nbContainer flex center'>0</p>
@@ -48,7 +48,7 @@ const Home = ()=>{
                     </div>
                     <div className="grid col-tk rowsOpc">
                         <div className='text flex'>
-                            <p><i class="bi bi-circle"></i> resueltas</p>
+                            <p><i className="bi bi-circle"></i> resueltas</p>
                         </div>
                         <div className='number flex'>
                             <p className='nbContainer flex center'>0</p>
@@ -56,7 +56,7 @@ const Home = ()=>{
                     </div>
                     <div className="grid col-tk rowsOpc">
                         <div className='text flex'>
-                            <p><i class="bi bi-circle-fill cn"></i> garantia</p>
+                            <p><i className="bi bi-circle-fill cn"></i> garantia</p>
                         </div>
                         <div className='number flex'>
                             <p className='nbContainer flex center'>0</p>
@@ -64,7 +64,7 @@ const Home = ()=>{
                     </div>
                     <div className="grid col-tk rowsOpc">
                         <div className='text flex'>
-                            <p><i class="bi bi-circle-fill"></i> cerrado</p>
+                            <p><i className="bi bi-circle-fill"></i> cerrado</p>
                         </div>
                         <div className='number flex'>
                             <p className='nbContainer flex center'>0</p>
@@ -81,7 +81,7 @@ const Home = ()=>{
                     </div>
                     <div className="grid col-tk rowsOpc">
                         <div className='text flex'>
-                            <p><i class="bi bi-circle-fill cg"></i> nuevo</p>
+                            <p><i className="bi bi-circle-fill cg"></i> nuevo</p>
                         </div>
                         <div className='number flex'>
                             <p className='nbContainer flex center'>0</p>
@@ -89,7 +89,7 @@ const Home = ()=>{
                     </div>
                     <div className="grid col-tk rowsOpc">
                         <div className='text flex'>
-                            <p><i class="bi bi-circle cg"></i> en proceso</p>
+                            <p><i className="bi bi-circle cg"></i> en proceso</p>
                         </div>
                         <div className='number flex'>
                             <p className='nbContainer flex center'>0</p>
@@ -97,7 +97,7 @@ const Home = ()=>{
                     </div>
                     <div className="grid col-tk rowsOpc">
                         <div className='text flex'>
-                            <p><i class="bi bi-circle-fill cy"></i> en espera</p>
+                            <p><i className="bi bi-circle-fill cy"></i> en espera</p>
                         </div>
                         <div className='number flex'>
                             <p className='nbContainer flex center'>0</p>
@@ -105,7 +105,7 @@ const Home = ()=>{
                     </div>
                     <div className="grid col-tk rowsOpc">
                         <div className='text flex'>
-                            <p><i class="bi bi-circle"></i> resueltas</p>
+                            <p><i className="bi bi-circle"></i> resueltas</p>
                         </div>
                         <div className='number flex'>
                             <p className='nbContainer flex center'>0</p>
@@ -113,7 +113,7 @@ const Home = ()=>{
                     </div>
                     <div className="grid col-tk rowsOpc">
                         <div className='text flex'>
-                            <p><i class="bi bi-circle-fill cn"></i> garantia</p>
+                            <p><i className="bi bi-circle-fill cn"></i> garantia</p>
                         </div>
                         <div className='number flex'>
                             <p className='nbContainer flex center'>0</p>
@@ -121,7 +121,7 @@ const Home = ()=>{
                     </div>
                     <div className="grid col-tk rowsOpc">
                         <div className='text flex'>
-                            <p><i class="bi bi-circle-fill"></i> cerrado</p>
+                            <p><i className="bi bi-circle-fill"></i> cerrado</p>
                         </div>
                         <div className='number flex'>
                             <p className='nbContainer flex center'>0</p>

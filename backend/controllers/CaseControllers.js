@@ -2,7 +2,6 @@ import { credenciales } from "../index.js";
 
 export async function createCase(req,res){
     const {cliente, tecnico, titulo, comentario, seguimiento, fecha} = req.headers;
-
     let documento = null
     try{
         documento = await credenciales.query(`select create_ticket('${cliente}','${tecnico}','${titulo}','${comentario}','${seguimiento}','${fecha}')`)
@@ -41,7 +40,6 @@ export async function listProcessCase(req,res){
 export async function caseDescription(req,res){
     const { id } = req.headers;
     let documento = null;
-
     try{
         documento = await credenciales.query(`select*from case_description(${id})`)
         res.status(200).json(documento.rows)
@@ -54,7 +52,6 @@ export async function caseDescription(req,res){
 export async function case_commits(req,res){
     const { id } = req.headers;
     let documento = null;
-
     try{
         documento = await credenciales.query(`select*from case_commit(${id})`);
         res.status(200).json(documento.rows)
@@ -67,7 +64,6 @@ export async function case_commits(req,res){
 export async function add_commit(req,res){
     const {comentario, tecnico, estado, ticket} = req.headers;
     let documento = null;
-
     try{
         documento = await credenciales.query(`select case_commit_TK('${comentario}','${tecnico}', ${estado}, ${ticket})`);
         res.status(200).json({ message: "Éxito" });

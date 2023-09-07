@@ -1,3 +1,4 @@
+import FormularioEmergente from "../../components/forms/emergente/formEmergente";
 import { addCommit, commitCase, despCase } from "../../services/CaseServices";
 import { useEffect, useState, React, useContext } from "react";
 import SessionContext from "../../context/sesionContext";
@@ -17,6 +18,7 @@ const Case = ()=>{
     const [cliente, setCliente] = useState();
     const [commit, setCommit] = useState([]);
 
+    const [showForm, setShowForm] = useState(false);
     useEffect(()=>{
         const getData = async()=>{
             const dataCase = await despCase(id);
@@ -30,6 +32,15 @@ const Case = ()=>{
         }
         getData();
     },[id])
+
+    const handleOpenForm = () => {
+        setShowForm(true);
+    };
+    
+    const handleCloseForm = () => {
+        setShowForm(false);
+    };
+    
 
     function color(number){
         if(number == 1){
@@ -46,6 +57,7 @@ const Case = ()=>{
             window.location.reload();
         }
     }
+    
 
     return(
         <div className="case-container flex">
@@ -57,8 +69,8 @@ const Case = ()=>{
                         <p>Ticket - {id}</p>
                     </div>
                     <div className="flex btn-option">
-                        <Boton style="add">Agregar comentario</Boton>
-                        <Boton style="add">Solicitar autorizacion</Boton>
+                        <Boton style="add"  onClick={handleOpenForm}>Agregar comentario</Boton>
+                        {status===state.process && <Boton style="add" >Solicitar autorizacion</Boton>}
                         {status===state.new && <Boton style="add" onClick={support}>Iniciar soporte</Boton>}
                     </div>
                 </div>
@@ -79,6 +91,7 @@ const Case = ()=>{
                         </div>
                     </div>
                 </div>
+                <div className="commit">
                     {commit.map((caseC)=>{
                         return(
                             <div className="case-seg flex">
@@ -93,8 +106,9 @@ const Case = ()=>{
                             </div>
                         );
                     })}
-                    
+                </div>  
             </div>
+            {showForm && <FormularioEmergente onClose={handleCloseForm} desForm="commit" ticked={id} status={status}/>}
         </div>
     )
 }

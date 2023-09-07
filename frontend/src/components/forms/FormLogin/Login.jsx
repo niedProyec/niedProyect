@@ -25,8 +25,8 @@ const Login = ()=>{
     // remember es para saber si el usuario quiere recordar las credenciales
     // cookies se almacenan los datos que esten almacenadas en las cookies
 
-    const [user, setUser] = useState();
-    const [pass, setPass] = useState();
+    const [user, setUser] = useState('');
+    const [pass, setPass] = useState('');
     const [remember, setRemenber] = useState(false);
     const [cookies, setCookie] = useCookies(['user', 'password']);
 

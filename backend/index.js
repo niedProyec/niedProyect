@@ -3,6 +3,7 @@ import express from 'express';
 import cors from 'cors'
 import pg from 'pg';
 import CaseRouter from './Routes/CaseRouter.js';
+import mailRouter from './Routes/MailRouter.js';
 
 const puerto = 8090;
 const app = express();
@@ -40,3 +41,4 @@ app.use(express.json());
 //redirecciona a las rutas de user
 app.use("/user", userRouter);
 app.use("/case", CaseRouter);
+app.use("/mail", mailRouter);

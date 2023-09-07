@@ -1,11 +1,11 @@
-import { Navigate, Route, Routes } from "react-router-dom"
-import { SessionProvider } from "./context/sesionContext"
-import Inicio from "./views/inicio/Inicio"
-import Panel from "./views/panel/panel"
-import UserAuth from "./views/UserAuth/UserAuth"
-import UserCase from "./views/Case/UserCase"
+import { Navigate, Route, Routes } from "react-router-dom";
+import { SessionProvider } from "./context/sesionContext";
+import UserAuth from "./views/UserAuth/UserAuth";
+import UserCase from "./views/Case/UserCase";
+import Inicio from "./views/inicio/Inicio";
+import Panel from "./views/panel/panel";
 
-{/**en este modulo se define la funcion principal que va a contener la pagina a renderizar */}
+/**en este modulo se define la funcion principal que va a contener la pagina a renderizar */
 
 function App() {
 

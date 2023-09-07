@@ -24,22 +24,23 @@ export const SessionProvider = (props)=>{
 
     const { children } = props
     const [isLogedIn, setIsLogedIn] = useState(false);
-    const [userName, setUserName] = useState(null);
-    const [user, setUser] = useState(null)
+    const [userName, setUserName] = useState('');
+    const [user, setUser] = useState('')
     const [rol, setRol] = useState(null)
-    const [name, setName] = useState(null)
-    const [lastName, setLastName] = useState(null)
-    const [cel, setCel] = useState(null)
-    const [correo, setCorreo] = useState(null)
-    const [cedula, setCedula] = useState(null)
+    const [name, setName] = useState('')
+    const [lastName, setLastName] = useState('')
+    const [cel, setCel] = useState('')
+    const [correo, setCorreo] = useState('')
+    const [cedula, setCedula] = useState('')
 
     // la funcion de login coloca los datos requeridos en la sesion
 
     const login = (data)=>{
         setTimeout(() => {
+            const userNm = userName.slice(0,2).toUpperCase();
             setUserName(data.usuario)
             setCedula(data.identificacion)
-            setUser(userName.slice(0,2).toUpperCase())
+            setUser( userNm)
             setRol(data.rol)
             setName(data.nombre)
             setLastName(data.apellido)
